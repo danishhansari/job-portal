@@ -5,6 +5,8 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import Navbar from "./_components/navbar";
+import Footer from "./_components/footer";
 
 export const metadata: Metadata = {
   title: "Job Platform",
@@ -21,7 +23,11 @@ export default function RootLayout({
         <TRPCReactProvider>
           <div>
             <div className="grid-background"></div>
-            <main className="min-h-screen">{children}</main>
+            <main className="min-h-screen">
+              <Navbar />
+              {children}
+            </main>
+            <Footer />
           </div>
         </TRPCReactProvider>
       </body>
