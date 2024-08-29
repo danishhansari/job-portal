@@ -21,7 +21,7 @@ export default function RootLayout({
         <TRPCReactProvider>
           <div>
             <div className="grid-background"></div>
-            {children}
+            <main className="min-h-screen">{children}</main>
           </div>
         </TRPCReactProvider>
       </body>
