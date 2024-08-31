@@ -1,10 +1,13 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import Link from "next/link";
 import { Button } from "~/components/ui/button";
 
 const Navbar = () => {
   return (
     <nav className="flex items-center justify-between px-6 py-4">
-      <h2>Job Portal</h2>
+      <Link href={"/"} className="font-mono font-semibold text-slate-100">
+        Job Portal
+      </Link>
       <div>
         <SignedOut>
           <SignInButton>

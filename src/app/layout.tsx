@@ -7,15 +7,8 @@ import { type Metadata } from "next";
 import { TRPCReactProvider } from "~/trpc/react";
 import Navbar from "./_components/navbar";
 import Footer from "./_components/footer";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-import LandingPage from "~/components/landing-page";
 
 export const metadata: Metadata = {
   title: "Job Platform",
@@ -40,7 +33,7 @@ export default function RootLayout({
               <div className="grid-background"></div>
               <main className="min-h-screen">
                 <Navbar />
-                <LandingPage />
+                {children}
               </main>
               <Footer />
             </div>
