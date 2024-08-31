@@ -1,11 +1,20 @@
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { Button } from "~/components/ui/button";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between px-4 py-2 md:px-8 md:py-4">
+    <nav className="flex items-center justify-between px-6 py-4">
       <h2>Job Portal</h2>
-
-      <Button variant={"outline"}>Get Started</Button>
+      <div>
+        <SignedOut>
+          <SignInButton>
+            <Button variant={"outline"}>Get started</Button>
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </div>
     </nav>
   );
 };

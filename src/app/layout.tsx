@@ -7,6 +7,15 @@ import { type Metadata } from "next";
 import { TRPCReactProvider } from "~/trpc/react";
 import Navbar from "./_components/navbar";
 import Footer from "./_components/footer";
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
+import LandingPage from "~/components/landing-page";
 
 export const metadata: Metadata = {
   title: "Job Platform",
@@ -19,18 +28,25 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable} dark`}>
-      <body>
-        <TRPCReactProvider>
-          <div>
-            <div className="grid-background"></div>
-            <main className="min-h-screen">
-              <Navbar />
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </TRPCReactProvider>
-      </body>
+      <ClerkProvider
+        appearance={{
+          baseTheme: dark,
+          signIn: { baseTheme: dark },
+        }}
+      >
+        <body>
+          <TRPCReactProvider>
+            <div>
+              <div className="grid-background"></div>
+              <main className="min-h-screen">
+                <Navbar />
+                <LandingPage />
+              </main>
+              <Footer />
+            </div>
+          </TRPCReactProvider>
+        </body>
+      </ClerkProvider>
     </html>
   );
 }
