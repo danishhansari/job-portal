@@ -4,7 +4,7 @@ import { Button } from "~/components/ui/button";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between px-6 py-4">
+    <nav className="flex items-center justify-between px-4 py-4">
       <Link href={"/"} className="font-semibold text-slate-100">
         Job Portal
       </Link>

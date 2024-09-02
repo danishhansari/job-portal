@@ -16,7 +16,7 @@ const CompanyCarousel = () => {
             <img
               src={path}
               alt={name}
-              className="h-9 w-36 object-contain sm:h-14"
+              className="h-9 w-24 object-contain sm:h-14 md:w-36"
             />
           </CarouselItem>
         ))}
@@ -29,7 +29,7 @@ const CompanyCarousel = () => {
             <img
               src={path}
               alt={name}
-              className="h-9 w-36 object-contain sm:h-14"
+              className="h-9 w-24 object-contain sm:h-14 md:w-36"
             />
           </CarouselItem>
         ))}

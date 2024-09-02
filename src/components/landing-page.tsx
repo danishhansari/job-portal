@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import CompanyCarousel from "./carousel";
+import Image from "next/image";
 const LandingPage: React.FC = () => {
   return (
     <main>
@@ -23,6 +24,17 @@ const LandingPage: React.FC = () => {
 
       {/* Carousel */}
       <CompanyCarousel />
+
+      <div className="mx-auto mt-6 w-full md:mt-12 md:w-2/3">
+        <Image
+          src={"/companies/banner.webp"}
+          alt="Banner"
+          layout="responsive"
+          width={1600}
+          height={400}
+          className="rounded-md"
+        />
+      </div>
     </main>
   );
 };
