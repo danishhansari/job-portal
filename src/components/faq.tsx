@@ -8,25 +8,23 @@ import {
 
 const Faq = () => {
   return (
-    <div>
-      <Accordion
-        type="single"
-        collapsible
-        className="mx-auto w-full max-w-7xl px-4"
-      >
-        <h2 className="mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-          FAQ's
-        </h2>{" "}
-        {faq.map(({ id, question, answer }: FaqType) => {
-          return (
-            <AccordionItem key={id} value={`item-${id}`}>
-              <AccordionTrigger>{question}</AccordionTrigger>
-              <AccordionContent>{answer}</AccordionContent>
-            </AccordionItem>
-          );
-        })}
-      </Accordion>
-    </div>
+    <Accordion
+      type="single"
+      collapsible
+      className="mx-auto w-full max-w-7xl px-4 mb-6"
+    >
+      <h2 className="mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+        FAQ's
+      </h2>{" "}
+      {faq.map(({ id, question, answer }: FaqType) => {
+        return (
+          <AccordionItem key={id} value={`item-${id}`}>
+            <AccordionTrigger>{question}</AccordionTrigger>
+            <AccordionContent>{answer}</AccordionContent>
+          </AccordionItem>
+        );
+      })}
+    </Accordion>
   );
 };
 

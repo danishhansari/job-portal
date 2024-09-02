@@ -39,20 +39,24 @@ const LandingPage: React.FC = () => {
         />
       </div>
 
-      <section className="mx-auto my-12 grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-2 px-4">
+      <section className="mx-auto my-12 grid max-w-7xl grid-cols-1 gap-4 px-4 md:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>For Job Seekers</CardTitle>
+            <CardTitle className="scroll-m-20 text-2xl font-semibold tracking-tight">
+              For Job Seekers
+            </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="leading-7 [&:not(:first-child)]:mt-2">
             Search and apply for jobs, track application, and more.
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>For Employers</CardTitle>
+            <CardTitle className="scroll-m-20 text-2xl font-semibold tracking-tight">
+              For Employers
+            </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="leading-7 [&:not(:first-child)]:mt-2">
             Post jobs, manage applicatios, and find the best candidates.
           </CardContent>
         </Card>
