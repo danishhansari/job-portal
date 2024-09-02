@@ -2,6 +2,9 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import CompanyCarousel from "./carousel";
 import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import Faq from "./faq";
+
 const LandingPage: React.FC = () => {
   return (
     <main>
@@ -35,6 +38,27 @@ const LandingPage: React.FC = () => {
           className="rounded-md"
         />
       </div>
+
+      <section className="mx-auto my-12 grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-2 px-4">
+        <Card>
+          <CardHeader>
+            <CardTitle>For Job Seekers</CardTitle>
+          </CardHeader>
+          <CardContent>
+            Search and apply for jobs, track application, and more.
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>For Employers</CardTitle>
+          </CardHeader>
+          <CardContent>
+            Post jobs, manage applicatios, and find the best candidates.
+          </CardContent>
+        </Card>
+      </section>
+
+      <Faq />
     </main>
   );
 };
