@@ -18,7 +18,7 @@ const LandingPage: React.FC = () => {
       </section>
       <div className="mt-4 flex w-full items-center justify-center gap-4 md:mt-8">
         <Link href={"/jobs"}>
-          <Button>Find Jobs</Button>
+          <Button>Find Jobs</Button>{" "}
         </Link>
         <Link href={"/post-job"}>
           <Button variant={"secondary"}>Post Jobs</Button>
