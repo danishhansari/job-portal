@@ -1,6 +1,7 @@
 "use client";
 
 import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 import { ReactNode, useEffect } from "react";
 
 interface ProtectedRouteProps {
@@ -8,13 +9,18 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-  const { isSignedIn, isLoaded } = useUser();
+  const { isSignedIn, isLoaded, user } = useUser();
+  const router = useRouter();
 
   useEffect(() => {
     if (isLoaded && !isSignedIn) {
-      window.location.href = "/?sign-in=true";
+      router.push("/?sign-in=true");
+    } else if (isLoaded && isSignedIn && user && !user.unsafeMetadata.role) {
+      if (window.location.pathname !== "/onboarding") {
+        router.push("/onboarding");
+      }
     }
-  }, [isLoaded, isSignedIn]);
+  }, [isLoaded, isSignedIn, user, router]);
 
   if (!isLoaded || !isSignedIn) {
     return null;
