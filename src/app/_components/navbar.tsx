@@ -1,12 +1,19 @@
 "use client";
 
-import { SignedIn, SignedOut, SignIn, UserButton } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignIn,
+  UserButton,
+  useUser,
+} from "@clerk/nextjs";
 import { Briefcase, Heart } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "~/components/ui/button";
 
 const Navbar = () => {
+  const { user } = useUser();
   const [showSignin, setShowSignin] = useState(false);
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
@@ -25,7 +32,12 @@ const Navbar = () => {
       <Link href={"/"} className="font-semibold text-slate-100">
         Job Portal
       </Link>
-      <div>
+      <div className="flex items-center gap-4">
+        {user?.unsafeMetadata?.role === "recruiter" && (
+          <Button size={"sm"} variant={"secondary"}>
+            Post jobs
+          </Button>
+        )}
         <SignedOut>
           <Button variant={"outline"} onClick={() => setShowSignin(true)}>
             Get started
