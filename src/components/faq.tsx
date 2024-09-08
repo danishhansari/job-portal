@@ -1,4 +1,4 @@
-import { faq, FaqType } from "~/data/faq";
+import { faq, FaqType } from "~/lib/data/faq";
 import {
   Accordion,
   AccordionContent,
@@ -11,7 +11,7 @@ const Faq = () => {
     <Accordion
       type="single"
       collapsible
-      className="mx-auto w-full max-w-7xl px-4 mb-6"
+      className="mx-auto mb-6 w-full max-w-7xl px-4"
     >
       <h2 className="mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
         FAQ's
