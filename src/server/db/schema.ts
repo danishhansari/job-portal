@@ -19,11 +19,14 @@ export const companies = createTable("companies", {
     .notNull(),
 });
 
+export const jobRoleEnum = pgEnum("role", ["candidate", "recuiter"]);
+
 export const users = createTable("users", {
   id: serial("id").primaryKey(),
   name: varchar("name", { length: 256 }),
   email: varchar("email", { length: 256 }).unique(),
   company_id: serial("company_id").references(() => companies.id),
+  role: jobRoleEnum("role"),
 });
 
 export const job = createTable("job", {

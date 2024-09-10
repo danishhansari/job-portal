@@ -1,4 +1,4 @@
-import { faq, FaqType } from "~/lib/data/faq";
+import { faq, FaqType } from "~/data/faq";
 import {
   Accordion,
   AccordionContent,

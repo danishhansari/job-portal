@@ -1,6 +1,6 @@
 "use client";
 
-import { companies, CompaniesType } from "~/lib/data/companies";
+import { companies, CompaniesType } from "~/data/companies";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
